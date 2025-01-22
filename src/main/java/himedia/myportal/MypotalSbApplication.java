@@ -1,4 +1,4 @@
-package himedia.mypotal;
+package himedia.myportal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

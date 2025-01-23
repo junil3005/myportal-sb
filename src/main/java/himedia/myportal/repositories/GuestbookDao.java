@@ -2,6 +2,7 @@ package himedia.myportal.repositories;
 
 import java.util.List;
 
+
 import himedia.myportal.repositories.vo.GuestbookVo;
 
 public interface GuestbookDao {

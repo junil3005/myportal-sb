@@ -1,9 +1,5 @@
 package himedia.myportal.repositories.vo;
 
-import java.util.Date;
-
-
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,11 +11,14 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class GuestbookVo {
+
+public class BoardVo {
 	private Integer no;
-	private String name;
-	private String password;
+	private String title;
 	private String content;
-	private Date regdate;
+	private Integer hit;
+	private String regDate;
+	private Integer userNo;
+	private String userName;
 
 }

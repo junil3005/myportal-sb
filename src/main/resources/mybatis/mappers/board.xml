@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="board">
+<mapper namespace="himedia.myportal.mappers.BoardMapper">
 	<select id="selectAll"
 		resultType="boardVo">
+	<!-- 
 	SELECT b.no,
 		b.title,
 		b.content,
@@ -12,7 +13,16 @@
 		b.user_no as userNo,
 		u.name as userName
 	FROM board b, users u
-	WHERE b.user_no = u.no
+	WHERE b.user_no = u.no -->
+	SELECT b.no, 
+		b.title,
+		b.content,
+		b.hit,
+		b.reg_date as regDate,
+		b.user_no as userNo,
+		u.name as userName
+	FROM board b LEFT OUTER JOIN users u
+		ON b.user_no = u.no
 	</select>
 	
 	<insert id="insert" parameterType="boardVo">
@@ -33,7 +43,7 @@
 	
 	<select id="getContent" parameterType="int"
 		resultType="boardVo">
-	SELECT b.no,
+	<!-- SELECT b.no,
 		b.title, 
 		b.content, 
 		b.hit,
@@ -41,7 +51,17 @@
 		b.user_no as userNo,
 		u.name as userName
 	FROM board b, users u
-	WHERE b.user_no = u.no AND b.no = #{value}	
+	WHERE b.user_no = u.no AND b.no = #{value} -->
+	SELECT b.no, 
+		b.title,
+		b.content,
+		b.hit,
+		b.reg_date as regDate,
+		b.user_no as userNo,
+		u.name as userName
+	FROM board b LEFT OUTER JOIN users u
+		ON b.user_no = u.no
+	WHERE b.no = #{value}
 	</select>
 	
 	<update id="update" parameterType="boardVo">
